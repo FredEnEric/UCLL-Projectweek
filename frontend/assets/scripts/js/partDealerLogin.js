@@ -9,12 +9,21 @@ var makeAccount = function () {
 var login = function (e) {
     e.preventDefault();
     sessionStorage.setItem("account", JSON.stringify(makeAccount()));
-    console.log(sessionStorage.getItem("account"))
+    //console.log(sessionStorage.getItem("account"))
+    window.location = "partDealerChain.html";
 };
 
 var back = function (e) {
     e.preventDefault();
     setLogin();
+};
+
+var startup = function () {
+    if( sessionStorage.getItem("account") === null) {
+        setLogin();
+    } else {
+        window.location = "partDealerChain.html";
+    }
 };
 
 var setLogin = function () {
@@ -47,7 +56,7 @@ var registerField = function (e) {
 };
 
 $(document).ready(function (){
-    setLogin();
+    startup();
     $('form').on('click', 'a#partDealerLogin', login);
     $('form').on('click', 'a#partDealerRegister', registerField);
     $('form').on('click', 'a#back', back);

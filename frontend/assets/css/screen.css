@@ -1,0 +1,27 @@
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+.container-fluid {
+    padding: 60px 50px;
+    text-align: center;
+}
+.navbar {
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity: 0.9;
+}
+
+#footer #copyright
+{
+    padding: 20px 0px;
+    font-size: 12px;
+    background-color: #1f1f1f;
+    border-top: 1px solid #3a3a3a;
+    color: #777;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}

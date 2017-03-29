@@ -82,16 +82,10 @@ func (ps *Parts) ListParts(stub shim.ChaincodeStubInterface) ([]byte, error) {
 	return []byte(PartList), nil
 }
 
-//Update a Part in the database
-func (p *Part) UpdatePart(stub shim.ChaincodeStubInterface, partId string, part Part) ([]byte, error) {
-	cJsonIndent, _ := json.MarshalIndent(p, "", " ")
-	fmt.Println("CreatePart:", string(cJsonIndent))
-	err := stub.PutState(p.Id, cJsonIndent)
-	if err != nil {
-		return err
-	}
+// //Update a Part in the database
+// func (p *Part) UpdatePart(stub shim.ChaincodeStubInterface, partId string, part Part) ([]byte, error) {
 
-}
+// }
 
 //Load Parts sample data
 // func (cs *Parts) LoadSample(stub shim.ChaincodeStubInterface) string {

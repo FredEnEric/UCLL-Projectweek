@@ -33,12 +33,12 @@ func (t *Chaincode) Invoke(stub shim.ChaincodeStubInterface, function string, ar
 		if err != nil {
 			return nil, err
 		}
-	case "updatePart":
-		var p entities.Part
-		err := p.UpdatePart(stub, args, nil)
-		if err != nil {
-			return nil, err
-		}
+	/*case "updatePart":
+	var p entities.Part
+	err := p.UpdatePart(stub, args, nil)
+	if err != nil {
+		return nil, err
+	}*/
 	/*case "loadSampleParts":
 	var ps entities.Parts
 	message := ps.LoadSample(stub)

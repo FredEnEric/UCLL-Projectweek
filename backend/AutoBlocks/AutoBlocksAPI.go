@@ -15,16 +15,7 @@ var url = "http://172.19.0.2:7050/chaincode"
 var peer = "pbft_vp0_1"
 var chaincodeID string
 
-// func hash(s string) uint32 {
-// 	h := fnv.New32a()
-// 	h.Write([]byte(s))
-// 	return h.Sum32()
-// }
-
 func main() {
-
-	// var a = hash("azeazeaze")
-	// fmt.Println(a)
 
 	fmt.Println("URL:>", url)
 	fmt.Println("\n")
@@ -39,14 +30,13 @@ func main() {
 	fmt.Println(answer)
 	time.Sleep(10 * time.Second)
 	fmt.Println("\n")
-	fmt.Println("part created \n")
 
 	answer = QueryChaincode("getPart", `"0010"`, 7)
 	fmt.Println(answer)
 	time.Sleep(5 * time.Second)
 	fmt.Println("\n")
 
-	answer = QueryChaincode("listParts", "", 7)
+	answer = QueryChaincode("listParts", `""`, 7)
 	fmt.Println(answer)
 	time.Sleep(5 * time.Second)
 	fmt.Println("\n")

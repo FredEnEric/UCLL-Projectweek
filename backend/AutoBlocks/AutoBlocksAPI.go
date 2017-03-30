@@ -3,7 +3,6 @@ package main
 import (
 	"bytes"
 	"fmt"
-
 	"io/ioutil"
 	"net/http"
 	"os/exec"
@@ -26,7 +25,7 @@ func main() {
 	time.Sleep(5 * time.Second)
 	fmt.Println("\n")
 
-	answer = InvokeChaincode("createPart", `"0010", "Manu", "Spec", "Notes"`, 6)
+	answer = InvokeChaincode("createPart", `"0010", "Lay's", "Mars", "Cote d'or", "0009"`, 6)
 	fmt.Println(answer)
 	time.Sleep(10 * time.Second)
 	fmt.Println("\n")
@@ -36,7 +35,12 @@ func main() {
 	time.Sleep(5 * time.Second)
 	fmt.Println("\n")
 
-	answer = QueryChaincode("listParts", `""`, 7)
+	answer = InvokeChaincode("updatePart", `"0009", "JellyBean", "Bounty", "KitKat", "0010"`, 8)
+	fmt.Println(answer)
+	time.Sleep(10 * time.Second)
+	fmt.Println("\n")
+
+	answer = QueryChaincode("listParts", `""`, 9)
 	fmt.Println(answer)
 	time.Sleep(5 * time.Second)
 	fmt.Println("\n")

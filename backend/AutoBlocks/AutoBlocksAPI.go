@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-var url = "http://172.19.0.2:7050/chaincode"
+var url = "http://localhost:7050/chaincode"
 var peer = "pbft_vp0_1"
 var chaincodeID string
 
@@ -25,15 +25,15 @@ func main() {
 	time.Sleep(5 * time.Second)
 	fmt.Println("\n")
 
-	// answer = InvokeChaincode("createPart", `"0010", "Lay's", "Mars", "Cote d'or", "0009"`, 6)
-	// fmt.Println(answer)
-	// time.Sleep(10 * time.Second)
-	// fmt.Println("\n")
+	 answer = InvokeChaincode("createPart", `"0010", "Lay's", "Mars", "Cote d'or", "0009"`, 6)
+	 fmt.Println(answer)
+	 time.Sleep(10 * time.Second)
+	 fmt.Println("\n")
 
-	// answer = InvokeChaincode("createPart", `"0009", "aaa", "bbb", "ccc", "0001"`, 6)
-	// fmt.Println(answer)
-	// time.Sleep(10 * time.Second)
-	// fmt.Println("\n")
+	answer = InvokeChaincode("createPart", `"0009", "aaa", "bbb", "ccc", "0001"`, 6)
+	fmt.Println(answer)
+	time.Sleep(10 * time.Second)
+	fmt.Println("\n")
 
 	answer = QueryChaincode("getPart", `"0010"`, 7)
 	fmt.Println(answer)

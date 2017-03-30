@@ -1,7 +1,11 @@
-body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+body,h1,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 .w3-bar-block .w3-bar-item {padding:20px}
 .container-fluid {
     padding: 60px 50px;
+    text-align: left;
+}
+
+h2 {
     text-align: center;
 }
 .navbar {
@@ -25,3 +29,14 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     bottom: 0px;
     width: 100%;
 }
+
+#just {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#jjj {
+    margin-left: 33%;
+    margin-right: 33%;
+}
+

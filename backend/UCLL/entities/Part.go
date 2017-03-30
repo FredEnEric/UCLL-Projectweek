@@ -69,7 +69,7 @@ func (ps *Parts) ListParts(stub shim.ChaincodeStubInterface) ([]byte, error) {
 	fmt.Println(idxPartsByte)
 	PartIDs := strings.Split(string(idxPartsByte), ",")
 	fmt.Println(PartIDs)
-	PartList := "{\"Parts\":"
+	PartList := "{\"Parts\":["
 	for i, PartID := range PartIDs {
 		if i != 0 {
 			PartList = PartList + ","
@@ -78,7 +78,7 @@ func (ps *Parts) ListParts(stub shim.ChaincodeStubInterface) ([]byte, error) {
 		PartList = PartList + string(cJsonIndent)
 		fmt.Println(PartList)
 	}
-	PartList = PartList + "\n}"
+	PartList = PartList + "]}"
 	return []byte(PartList), nil
 }
 

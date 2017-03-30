@@ -11,7 +11,7 @@ import (
 type Part struct {
 	Id            string
 	Manufacturer  string
-	Parts         string
+	PartIds       string
 	Specification string
 	Notes         string
 }
@@ -23,7 +23,7 @@ func (p *Part) CreatePart(stub shim.ChaincodeStubInterface, args []string) error
 	p.Manufacturer = args[1]
 	p.Specification = args[2]
 	p.Notes = args[3]
-	p.Parts = args[4]
+	p.PartIds = args[4]
 
 	cJsonIndent, _ := json.MarshalIndent(p, "", " ")
 	fmt.Println("CreatePart:", string(cJsonIndent))
@@ -88,7 +88,7 @@ func (p *Part) UpdatePart(stub shim.ChaincodeStubInterface, args []string) error
 	p.Manufacturer = args[1]
 	p.Specification = args[2]
 	p.Notes = args[3]
-	p.Parts = args[4]
+	p.PartIds = args[4]
 
 	cJsonIndent, err := stub.GetState(p.Id)
 	if err != nil {

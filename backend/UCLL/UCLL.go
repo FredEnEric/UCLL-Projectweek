@@ -29,30 +29,16 @@ func (t *Chaincode) Invoke(stub shim.ChaincodeStubInterface, function string, ar
 	switch function {
 	case "createPart":
 		var p entities.Part
-		err := p.CreatePart(stub, args, nil)
+		err := p.CreatePart(stub, args)
 		if err != nil {
 			return nil, err
 		}
-	/*case "updatePart":
-	var p entities.Part
-	err := p.UpdatePart(stub, args, nil)
-	if err != nil {
-		return nil, err
-	}*/
-	/*case "loadSampleParts":
-	var ps entities.Parts
-	message := ps.LoadSample(stub)
-	return []byte(message), nil*/
-	/*case "addMaintenance":
-		var m entities.Maintenance
-		err := m.AddMaintenance(stub, args)
+	case "updatePart":
+		var p entities.Part
+		err := p.UpdatePart(stub, args)
 		if err != nil {
 			return nil, err
 		}
-	case "loadMaintenanceSample":
-		var cm entities.CarMaintenance
-		message := cm.LoadMaintenanceSample(stub)
-		return []byte(message), nil*/
 	default:
 		return nil, errors.New("Invoke: Received unknonw function name")
 	}
@@ -66,10 +52,6 @@ func (t *Chaincode) Query(stub shim.ChaincodeStubInterface, function string, arg
 		var p entities.Part
 		cJsonIndent, err := p.GetPart(stub, args[0])
 		return cJsonIndent, err
-	/*case "getCarMaintenceList":
-	var cm entities.CarMaintenance
-	cmJsonIndent, err := cm.GetCarMaintenceList(stub, args[0])
-	return cmJsonIndent, err*/
 	case "listParts":
 		var ps entities.Parts
 		psJsonIndent, err := ps.ListParts(stub)
